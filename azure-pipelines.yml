@@ -26,7 +26,6 @@ steps:
     configMode: 'manual'
     cliProjectKey: 'guillaume-chervet_dotnet-fibonacci'
     cliProjectName: 'dotnet-fibonacci'
-    cliSources: '.'
     extraProperties: |
       sonar.cs.opencover.reportsPaths=**/opencover.xml
       sonar.branch.name=$(Build.SourceBranchName)
