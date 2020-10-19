@@ -30,9 +30,8 @@ steps:
     publishWebProjects: false
     projects: '**/Demo.csproj'
     arguments: '-r win-x64 --self-contained=true /p:PublishSingleFile=true /p:IncludeNativeLibrariesInSingleFile=true --output $(Build.ArtifactStagingDirectory)'
-- task: DownloadBuildArtifacts@0
+- task: PublishBuildArtifacts@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'Demo'
-    downloadPath: '$(System.ArtifactsDirectory)/'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
