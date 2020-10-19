@@ -30,3 +30,10 @@ steps:
     publishWebProjects: false
     projects: '**/Demo.csproj'
     arguments: '-r win-x64 --self-contained=true /p:PublishSingleFile=true /p:IncludeNativeLibrariesInSingleFile=true'
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'Demo'
+    itemPattern: 'src/Demo/bin/Debug/net5.0/win-x64/publish/**'
+    downloadPath: '$(System.ArtifactsDirectory)/Demo'
