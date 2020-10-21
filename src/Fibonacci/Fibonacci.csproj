@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>Guillaume.Chervet.Fibonacci2</PackageId>
   </PropertyGroup>
 
 </Project>
