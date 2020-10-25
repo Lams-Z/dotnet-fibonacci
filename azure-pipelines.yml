@@ -33,15 +33,15 @@ steps:
       sonar.project.monorepo.enabled=true
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'test'
-    projects: '**/*Tests.csproj'
-    arguments: '--configuration $(BuildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/opencover.xml'
-    publishTestResults: false
-- task: DotNetCoreCLI@2
-  inputs:
     command: 'build'
     projects: 'fibonacci.sln'
     arguments: '--configuration $(BuildConfiguration)'
+    publishTestResults: false
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/*Tests.csproj'
+    arguments: '--configuration $(BuildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/opencover.xml'
     publishTestResults: false
 - task: DotNetCoreCLI@2
   inputs:
