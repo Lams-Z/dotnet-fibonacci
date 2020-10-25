@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Fibonacci\Fibonacci.csproj" />
-    <ProjectGuid>{9224c484-3e23-4f06-a749-195c1e478110}</ProjectGuid>
   </ItemGroup>
 
 </Project>
