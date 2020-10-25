@@ -36,7 +36,6 @@ steps:
     command: 'build'
     projects: 'fibonacci.sln'
     arguments: '--configuration $(BuildConfiguration)'
-    publishTestResults: false
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
