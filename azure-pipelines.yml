@@ -36,6 +36,9 @@ steps:
     command: 'build'
     projects: 'Fibonacci.sln'
     arguments: '--configuration $(BuildConfiguration)'
+- task: MSBuild@1
+  inputs:
+    solution: '**/*.sln'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
