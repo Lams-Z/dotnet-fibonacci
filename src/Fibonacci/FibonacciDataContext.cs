@@ -42,6 +42,7 @@ namespace Fibonacci
                 entity.Property(e => e.FibInput).HasColumnName("FIB_Input");
 
                 entity.Property(e => e.FibOutput).HasColumnName("FIB_Output");
+                entity.Property(e => e.FibCreatedTimestamp).HasColumnName("FIB_CreatedTimestamp");
             });
 
             OnModelCreatingPartial(modelBuilder);

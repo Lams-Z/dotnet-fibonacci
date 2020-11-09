@@ -8,7 +8,7 @@ namespace Fibonacci.Tests
         public void Test1()
         {
             var result = Compute.Execute(new[] {"44"});
-            Assert.Equal(701408733, result[0]);
+            Assert.Equal(701408733, result.Result[0]);
         }
     }
 }
