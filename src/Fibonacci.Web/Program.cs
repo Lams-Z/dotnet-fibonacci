@@ -24,7 +24,7 @@ public class Program
                         async context =>
                         {
                             await context.Response.WriteAsync(
-                                JsonSerializer.Serialize(Fibonacci.Compute.Execute(new[] {"44", "43"})));
+                                JsonSerializer.Serialize( new Fibonacci.Compute.Execute(new[] {"44", "43"})));
                         });
                 });
             });

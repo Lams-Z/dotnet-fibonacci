@@ -9,8 +9,11 @@ internal class Program
     {
         var stopwatch = new Stopwatch();
         stopwatch.Start();
-        var results = await Compute.Execute(args);
-        foreach (var result in results) Console.WriteLine($"Result: {result}");
+        using (var fibonacciDataContext = new FibonacciDataContext())
+        {
+            var results = await new Compute(fibonacciDataContext).Execute(args);
+            foreach (var result in results) Console.WriteLine($"Result: {result}");
+        }
         stopwatch.Stop();
         Console.Write($"Elapsed seconds: {stopwatch.Elapsed.TotalSeconds}");
     }
