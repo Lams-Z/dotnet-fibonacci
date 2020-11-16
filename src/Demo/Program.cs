@@ -22,8 +22,9 @@ internal class Program
         var applicationConfig = applicationSection.Get<ApplicationConfig>();
 
         var services = new ServiceCollection();
-        services.AddDbContext<FibonacciDataContext>(options => options.UseSqlServer(configuration.GetConnectionString("FiboConnection")));
-        services.AddTransient<Compute>();
+        services.AddDbContext<FibonacciDataContext>(
+            options => options.UseSqlServer(configuration.GetConnectionString("FiboConnection")));
+        services.AddSingleton<Compute>();
         services.AddLogging();
 
         var stopwatch = new Stopwatch();
