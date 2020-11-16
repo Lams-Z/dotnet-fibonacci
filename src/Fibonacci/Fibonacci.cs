@@ -22,7 +22,7 @@ namespace Fibonacci
             return Fib(i - 2) + Fib(i - 1);
         }
 
-        public async Task<IList<int>> Execute(string[] args)
+        public async Task<IList<int>> ExecuteAsync(string[] args)
         {
             var results = new List<int>();
            // using (var fibonacciDataContext = new FibonacciDataContext())

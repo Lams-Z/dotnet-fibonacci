@@ -20,7 +20,7 @@ namespace Fibonacci.Tests
                 
                 
                 
-                var result = new Compute(fibonacciDataContext).Execute(new[] {"44"});
+                var result = new Compute(fibonacciDataContext).ExecuteAsync(new[] {"44"});
                 Assert.Equal(701408733, result.Result[0]);
             }
         }

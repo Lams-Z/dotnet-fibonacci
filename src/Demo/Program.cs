@@ -36,7 +36,7 @@ internal class Program
             logger.LogInformation($"Application Name : {applicationConfig.Name}");
             logger.LogInformation($"Application Message : {applicationConfig.Message}");
             var compute = serviceProvider.GetService<Compute>();
-            var results = await compute.Execute(args);
+            var results = await compute.ExecuteAsync(args);
 
             foreach (var result in results)
             {
