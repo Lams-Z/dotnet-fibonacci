@@ -17,6 +17,9 @@ namespace Fibonacci.Tests
             using (var fibonacciDataContext = new FibonacciDataContext(options))
             {
                 await fibonacciDataContext.Database.EnsureCreatedAsync();
+                
+                
+                
                 var result = new Compute(fibonacciDataContext).Execute(new[] {"44"});
                 Assert.Equal(701408733, result.Result[0]);
             }
